@@ -61,12 +61,12 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'docker build -t Hema:v1 html'
+                sh 'docker build -t hema:v1 html'
             }
         }
         stage('Deploy') {
             steps {
-                sh 'docker run -itd --name cycle -p 8089:80 Hema:v1'
+                sh 'docker run -itd --name cycle -p 8089:80 hema:v1'
             }
         }
     }
